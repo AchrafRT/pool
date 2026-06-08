@@ -1,0 +1,30 @@
+QA REPORT - v11 Admin-Only Reports Tab
+
+Build source:
+- Started from v10_player_running_totals.
+- Patched run_pool.py only.
+
+Verified changes:
+- Staff AM login does not render the Reports tab.
+- Staff PM login does not render the Reports tab.
+- Admin login renders Tables, Reports, and Admin tabs.
+- Staff attempting to stay on reports/admin tab is forced back to Tables.
+- Close & Report button remains visible for AM/PM staff.
+- Close & Report remains visible for Admin.
+
+Regression checks:
+- Python syntax check passed.
+- JavaScript syntax extraction/check passed.
+- ZIP integrity passed.
+- Login still accepts AM/am, PM/pm, and admin.
+- No SQL or external database added.
+- No external PDF dependency added.
+
+Operational note:
+AM/PM staff workflow is now locked down to table operations plus shift close/report.
+Owner/admin reporting remains under the Admin Reports tab.
+
+V12 QA additions:
+- Verified floorHTML orders tables as 4,6,8,3,5,7.
+- Verified tableCard includes table-specific CSS classes table-3 through table-8.
+- Verified responsive CSS grid areas for wide, medium, and narrow screens.
