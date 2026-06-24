@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-06-08T01:20:41+00:00",
-  "updated_at": "clean-release-v11",
+  "created_at": "2026-06-23T22:11:48+00:00",
+  "updated_at": "2026-06-23T22:11:48+00:00",
   "tables": {
     "3": {
       "number": 3,
@@ -11,7 +11,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -26,11 +26,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     },
     "4": {
       "number": 4,
@@ -41,7 +42,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -56,11 +57,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     },
     "5": {
       "number": 5,
@@ -71,7 +73,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -86,11 +88,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     },
     "6": {
       "number": 6,
@@ -101,7 +104,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -116,11 +119,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     },
     "7": {
       "number": 7,
@@ -131,7 +135,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -146,11 +150,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     },
     "8": {
       "number": 8,
@@ -161,7 +166,7 @@
       "pricing_id": null,
       "pricing_name_fr": "",
       "pricing_name_en": "",
-      "pricing_kind": null,
+      "pricing_kind": "hourly",
       "rate_per_hour": 0.0,
       "flat_amount": 0.0,
       "extra_player_fee": 0.0,
@@ -176,11 +181,12 @@
       "notes": "",
       "relay_on": false,
       "last_total": 0.0,
-      "pause_seconds": 0,
       "custom_pricing": null,
-      "opened_shift_id": null,
-      "opened_business_date": null,
-      "opened_by": null
+      "custom_duration_seconds": 0,
+      "timer_started_at": null,
+      "timer_warning_sent": false,
+      "timer_expired": false,
+      "timer_expired_at": null
     }
   }
 }

@@ -7,7 +7,7 @@
   "max_players_per_table": 4,
   "custom_rate_password": "pool",
   "rounding": 0.05,
-  "timezone": "America/Montreal",
+  "timezone": "America/Toronto",
   "passwords": {
     "am": "am",
     "pm": "PM",
@@ -16,12 +16,12 @@
   "pricing_options": [
     {
       "id": "am_hourly",
-      "fr": "AM 11h-19h - 6$/h (+7$/joueur extra)",
-      "en": "AM 11am-7pm - $6/h (+$7/extra player)",
+      "fr": "AM 11h-19h - 6$/h",
+      "en": "AM 11am-7pm - $6/h",
       "kind": "hourly",
       "per_hour": 6.0,
       "flat_amount": 0.0,
-      "extra_player_fee": 7.0,
+      "extra_player_fee": 0.0,
       "included_players": 1,
       "shift": "am",
       "days": [
@@ -37,8 +37,8 @@
     },
     {
       "id": "am_flat",
-      "fr": "AM 11h-19h - 9$ forfait 8h (+7$/joueur extra)",
-      "en": "AM 11am-7pm - $9 8h flat (+$7/extra player)",
+      "fr": "AM 11h-19h - 9$ forfait",
+      "en": "AM 11am-7pm - $9 flat",
       "kind": "flat",
       "per_hour": 0.0,
       "flat_amount": 9.0,

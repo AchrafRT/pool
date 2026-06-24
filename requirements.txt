@@ -1,2 +1,1 @@
-# No external Python packages required.
-# This app uses only the Python standard library.
+tzdata>=2026.1

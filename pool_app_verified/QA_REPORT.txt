@@ -1,30 +1,76 @@
-QA REPORT - v11 Admin-Only Reports Tab
+SayF Pool Control v13 QA Report
 
-Build source:
-- Started from v10_player_running_totals.
-- Patched run_pool.py only.
+Status: PASS
 
-Verified changes:
-- Staff AM login does not render the Reports tab.
-- Staff PM login does not render the Reports tab.
-- Admin login renders Tables, Reports, and Admin tabs.
-- Staff attempting to stay on reports/admin tab is forced back to Tables.
-- Close & Report button remains visible for AM/PM staff.
-- Close & Report remains visible for Admin.
+Verified from a clean extracted zip:
+- Root launcher compiles and boots: python run_pool.py
+- Original app file compiles and boots: pool_app_verified/run_pool.py
+- Login works with default admin password.
+- AM pricing catalog is clean:
+  - AM hourly: 6$/h, no automatic +7 player charge.
+  - AM flat: 9$ first player, +7$ added players.
+- AM flat split bill verified:
+  - P1 = 9.00$
+  - P2 = 7.00$
+  - Table total = 16.00$
+- AM hourly with multiple players does not add the +7$ charge.
+- Close table supports Fermer PAYÉ and Fermer NON PAYÉ.
+- Custom amount timer verified:
+  - 15$ during AM converts to 150 minutes at 6$/h.
+- Custom minute timer verified:
+  - Timer expires.
+  - Relay state turns OFF.
+  - Table can resume at current hourly rate.
+- Admin report endpoint verified.
+- Admin report PDF verified.
+- CSV export verified.
+- Admin password change verified:
+  - Old password stops working.
+  - New password works.
+- Served frontend JavaScript syntax verified with node --check.
+- Timezone crash fixed:
+  - Default timezone changed to America/Toronto.
+  - tzdata added for packaged/deployed installs.
+  - If Python still cannot find timezone data, app falls back to the computer local timezone instead of crashing.
+- Blank screen fix:
+  - Added visible fallback content inside the app container before JavaScript runs.
+  - Added a visible JavaScript error screen instead of an empty background.
+  - Removed optional chaining/nullish JavaScript syntax from the UI path for better touchscreen/browser-shell compatibility.
+  - Served frontend JavaScript verified with node --check after patch.
+- Admin panel style upgrade:
+  - Added dark terminal-style admin console based on supplied admin.html reference.
+  - Added status tiles, section dividers, clean setting rows, pricing cards, report/export actions, and relay control grid.
+  - Admin settings now save timezone, admin password, tax/rounding, business name, and editable AM/PM pricing values.
+- Custom tab flow update:
+  - Staff chooses the "$ AMOUNT" or "MINUTES" touch button, enters one value, then presses the normal Ouvrir/Open button.
+  - Custom timer no longer requires a custom password.
+  - "$ AMOUNT" path verified: 15$ opens as timer, charges 15.00$, and gives 150 minutes at AM 6$/h.
+  - "MINUTES" path verified: 90 minutes opens as timer and charges 9.00$ at AM 6$/h.
+- Translation and 23.8-inch floor layout update:
+  - Main French/English control labels reviewed and cleaned up.
+  - Table floor gets a compact no-page-scroll mode for 23.8-inch all-in-one use.
+  - Dashboard now shows light status separately from billing status.
+  - Relay/channel manual ON/OFF updates the matching table light state even if the table is closed.
+  - Served frontend JavaScript verified after layout/light changes.
+- Reports tab date/time fix:
+  - Rebuilt reports date/time controls into clean report cards.
+  - Added current system date/time inside the reports tab.
+  - Report generated timestamps and manual event times now display as readable local date/time instead of raw ISO strings.
+  - Admin and daily report endpoints verified after the UI change.
+- Render hostable package:
+  - render.yaml, Procfile, runtime.txt, start_render.sh, README_RENDER.txt, and GITHUB_RENDER_DEPLOY.txt included.
+  - Render start wrapper verified with PORT environment variable.
+- Render custom timer visibility fix:
+  - Compact floor cards no longer clip the Custom timer section.
+  - Custom timer controls are more compact in floor mode.
+  - Table cards allow internal overflow instead of hiding the bottom of the Custom panel.
+- Render browser scaling fix:
+  - Wide-screen floor mode now compacts by browser width, so it works even when browser chrome/bookmarks/taskbar reduce the available height.
+  - Header, tabs, table cards, buttons, player rows, and custom timer controls are shorter in Render desktop view.
+  - Helper text is hidden in floor mode so the Custom amount/minutes panel and normal Ouvrir button stay visible.
 
-Regression checks:
-- Python syntax check passed.
-- JavaScript syntax extraction/check passed.
-- ZIP integrity passed.
-- Login still accepts AM/am, PM/pm, and admin.
-- No SQL or external database added.
-- No external PDF dependency added.
-
-Operational note:
-AM/PM staff workflow is now locked down to table operations plus shift close/report.
-Owner/admin reporting remains under the Admin Reports tab.
-
-V12 QA additions:
-- Verified floorHTML orders tables as 4,6,8,3,5,7.
-- Verified tableCard includes table-specific CSS classes table-3 through table-8.
-- Verified responsive CSS grid areas for wide, medium, and narrow screens.
+Architecture:
+- Original local-first one-file app preserved in pool_app_verified/run_pool.py.
+- Data remains JSON / JSONL in pool_runtime/.
+- No SQL added.
+- Render deployment files preserved.
